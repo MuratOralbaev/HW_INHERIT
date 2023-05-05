@@ -17,9 +17,7 @@ public class TodosTest {
                 "Приложение НетоБанка",
                 "Во вторник после обеда"
         );
-
         Todos todos = new Todos();
-
         todos.add(simpleTask);
         todos.add(epic);
         todos.add(meeting);
@@ -42,20 +40,15 @@ public class TodosTest {
                 "Приложение НетоБанка",
                 "Во вторник после обеда"
         );
-
         Todos todos = new Todos();
-
         todos.add(simpleTask);
         todos.add(epic);
         todos.add(meeting);
-
         Task[] expected = {epic};
         Task[] actual = todos.search("Хлеб");
-
         Assertions.assertArrayEquals(expected, actual);
-
-
     }
+
     @Test
     public void shouldSearchNoMatches() {
         SimpleTask simpleTask = new SimpleTask(5, "Пробежать 10км");
@@ -69,20 +62,17 @@ public class TodosTest {
                 "Приложение НетоБанка",
                 "Во вторник после обеда"
         );
-
         Todos todos = new Todos();
-
         todos.add(simpleTask);
         todos.add(epic);
         todos.add(meeting);
-        Task[]expected ={};
-        Task[]actual=todos.search("Банан");
+        Task[] expected = {};
+        Task[] actual = todos.search("Банан");
         Assertions.assertArrayEquals(expected, actual);
-
     }
 
     @Test
-    public void shouldSearchSomeMatch(){
+    public void shouldSearchSomeMatch() {
         SimpleTask simpleTask = new SimpleTask(5, "Выкинуть протухшие Яйца");
 
         String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
@@ -94,15 +84,12 @@ public class TodosTest {
                 "Приложение НетоБанка",
                 "Во вторник после обеда"
         );
-
         Todos todos = new Todos();
-
         todos.add(simpleTask);
         todos.add(epic);
         todos.add(meeting);
-        Task[]expected = {simpleTask, epic};
-        Task[]actual = todos.search("Яйца");
+        Task[] expected = {simpleTask, epic};
+        Task[] actual = todos.search("Яйца");
         Assertions.assertArrayEquals(expected, actual);
-
     }
 }
